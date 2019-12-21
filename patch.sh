@@ -1,4 +1,5 @@
 #!/bin/sh
+cd `dirname $0`
 
 export TMPDIR=`mktemp -d /tmp/selfextract.XXXXXX`
 
