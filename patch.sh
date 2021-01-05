@@ -11,9 +11,9 @@ echo "Patching data"
 cp -r $TMPDIR/data/Contents/ ./Doukutsu.app/Contents/
 echo "patching executable"
 cp ./Doukutsu.app/Contents/MacOS/Doukutsu ./Doukutsu.app/Contents/MacOS/Doukutsu.bak
-dd if=./Doukutsu.app/Contents/MacOS/Doukutsu.bak of=./Doukutsu.app/Contents/MacOS/Doukutsu bs=1 count=408864
+dd if=./Doukutsu.app/Contents/MacOS/Doukutsu.bak of=./Doukutsu.app/Contents/MacOS/Doukutsu bs=1 count=404768
 cat $TMPDIR/data/stage.dat >> ./Doukutsu.app/Contents/MacOS/Doukutsu
-dd if=./Doukutsu.app/Contents/MacOS/Doukutsu.bak skip=427579 bs=1 >> ./Doukutsu.app/Contents/MacOS/Doukutsu
+dd if=./Doukutsu.app/Contents/MacOS/Doukutsu.bak skip=423483 bs=1 >> ./Doukutsu.app/Contents/MacOS/Doukutsu
 codesign -f -s - ./Doukutsu.app/Contents/MacOS/Doukutsu
 
 rm -rf $TMPDIR
